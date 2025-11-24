@@ -1,7 +1,11 @@
 import Config from "../../knexfile.js";
 import knex from "knex";
+import dotenv from "dotenv";
 
-export const conn = knex(Config.development);
+dotenv.config()
+const environment = NODE_ENV || "development"
+
+export const conn = knex(Config[environment]);
 
 conn.raw("SELECT 1")
 .then(() => {
