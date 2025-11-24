@@ -49,8 +49,8 @@ class EstoqueRepository {
                 quantidade,
                 descricao,
                 categoria,
-                fabricacao,
-                validade,
+                fabricacao: new Date(fabricacao),
+                validade: new Date(validade),
                 instrutor_id
             });
             return estoque;
