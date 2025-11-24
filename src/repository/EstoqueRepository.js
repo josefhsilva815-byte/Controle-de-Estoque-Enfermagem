@@ -59,17 +59,23 @@ class EstoqueRepository {
         };
     };
 
-    async updateQuantItem(id, quantidade) {
+    async updateQuantItem(id, dados) {
         try {
             const [item] = await conn("estoque").where({id})
             if(!item) throw new Error("Item não encontrado ou inexistente!");
             const newItem = {
-
+                nome,
+                quantidade: dados.quantidade ?? item.quantidade,
+                descricao,
+                categoria,
+                fabricacao: new Date(dados.fabricacao),
+                validade: new Date(dados.validade),
+                instrutor_id
             }
             return await conn("estoque").where({id}).update(newItem);
         } catch (error) {
-            
-        }  
+            throw new Error(error);
+        };
     };
 }
 export default EstoqueRepository;

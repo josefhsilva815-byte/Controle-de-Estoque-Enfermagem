@@ -101,9 +101,23 @@ export async function createItem(req, res) {
 export async function updateItem(req, res) {
     try {
         const { id } = req.params;
-        const { quantidade } = req.body;
+        const { nome,
+            quantidade,
+            descricao,
+            categoria,
+            fabricacao,
+            validade,
+            instrutor_id } = req.body;
 
-        await estoqueRepository.updateQuantItem(id, quantidade);
+        await estoqueRepository.updateQuantItem(id, {
+            nome,
+            quantidade,
+            descricao,
+            categoria,
+            fabricacao,
+            validade,
+            instrutor_id
+        });
 
         return res.status(200).json("Item atualizado com sucesso!");
     } catch (error) {
