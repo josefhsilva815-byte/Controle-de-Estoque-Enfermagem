@@ -1,0 +1,70 @@
+🏥 Projeto Enfermagem – Sistema de Gestão de Depósito
+
+1. 📌 Descrição do Projeto
+
+Breve explicação sobre o objetivo do sistema.
+Exemplo:
+Sistema para controle de estoque, entrada, saída e rastreamento de produtos de enfermagem, voltado para depósitos, clínicas ou hospitais.
+
+2. 🛠️ Tecnologias Utilizadas
+
+Tudo o que o projeto usa:
+
+Linguagem (JavaScript.)
+Framework (Node.js, Express.)
+Banco de Dados (MySQL.)
+Ferramentas (Insomnia, Jest.)
+
+3. 📂 Estrutura do Projeto
+
+Pastas principais:
+
+/src
+  /controllers
+  /services
+  /repositories
+  /routes
+  /models
+  /middlewares
+/tests
+/docs
+
+4. 🧩 Funcionalidades Principais
+
+Tudo que o sistema faz:
+
+● Gestão de Produtos
+Cadastro
+Edição
+Exclusão
+Listagem
+Lotes / Validade
+
+● Controle de Estoque
+Entrada de produtos
+Saída (utilização, baixa, devolução)
+Ajustes de inventário
+
+● Gestão de Usuários
+Cadastro e autenticação
+Níveis de acesso (admin / operador)
+
+● Relatórios
+Produtos com baixo estoque
+Produtos vencendo
+Histórico de movimentação
+
+5. 🗄️ Modelo de Dados
+
+Resumo das tabelas:
+
+Produtos
+Categorias
+Fornecedores
+Entradas
+Saídas
+Usuários
+
+6. 👤 Colaboradores
+
+Amabilis, Bruno, Daniel, Guilherme, Thiago, Jose.
