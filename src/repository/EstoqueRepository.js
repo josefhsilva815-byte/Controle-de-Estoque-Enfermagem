@@ -77,5 +77,15 @@ class EstoqueRepository {
             throw new Error(error);
         };
     };
+
+    async deleteItem(id) {
+        try {
+            const item = await conn("estoque").where({id}).first();
+            if(!item) throw new Error("Item não encontrado!");
+            return await conn("estoque").where({id}).delete();
+        } catch (error) {
+            throw new Error(error);
+        };
+    };
 }
 export default EstoqueRepository;
