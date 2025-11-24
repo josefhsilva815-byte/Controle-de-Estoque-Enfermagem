@@ -64,13 +64,13 @@ class EstoqueRepository {
             const [item] = await conn("estoque").where({id})
             if(!item) throw new Error("Item não encontrado ou inexistente!");
             const newItem = {
-                nome,
+                nome: item.nome,
                 quantidade: dados.quantidade ?? item.quantidade,
-                descricao,
-                categoria,
-                fabricacao: new Date(dados.fabricacao),
-                validade: new Date(dados.validade),
-                instrutor_id
+                descricao: item.descricao,
+                categoria: item.categoria,
+                fabricacao: new Date(item.fabricacao),
+                validade: new Date(item.validade),
+                instrutor_id: item.instrutor_id
             }
             return await conn("estoque").where({id}).update(newItem);
         } catch (error) {
